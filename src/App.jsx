@@ -10,7 +10,7 @@ const darkColour = "#051428";
 const darkColour2 = "#020B16";
 
 // Parent component
-export default function Fetch({testId = 'Fetch'}) {
+export default function Fetch() {
 
   // State for importanceStandard, scores, data (items), and tooltip
   const [importanceStandard, setImportanceStandard] = useState('combined');
@@ -129,7 +129,7 @@ export default function Fetch({testId = 'Fetch'}) {
   };
 
   return (
-    <div id="test" style={{ height: '100vh', width: '100vw' }}>
+    <div data-testid="Fetch" style={{ height: '100vh', width: '100vw' }}>
       <div
         style={{ height: '100%' }}
         aria-label={ `Les Misérables character chart` }

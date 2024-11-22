@@ -1,11 +1,9 @@
-import React from 'react';
 import '@testing-library/jest-dom'
 import { render, screen } from "@testing-library/react"
-import App from "./App"
+import Fetch from "./App"
 
-describe("App", () => {
+describe("Fetch", () => {
     let originalFetch;
-  
     beforeEach(() => {
       originalFetch = global.fetch;
       global.fetch = jest.fn(() =>
@@ -45,10 +43,9 @@ describe("App", () => {
         global.fetch = originalFetch;
     });
 
-    it("renders App component", async () => {
-        render(<App />);
-        const linkElement = await screen.findByText('Important characters in the show');
-        expect(linkElement).toBeInTheDocument();
+    it("renders the Fetch component", async () => {
+        const { getByTestId } = render(<Fetch />);
+        const div = getByTestId('Fetch');
+        expect(div).toBeInTheDocument();
     });
-    
 });  

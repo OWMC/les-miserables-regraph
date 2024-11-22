@@ -15,15 +15,24 @@ describe("App", () => {
                 {
                     "nodes": [
                         {
-                        "name": "Myriel",
-                        "group": 1
+                            "name": "Ben",
+                            "group": 1
+                        },                         
+                        {
+                            "name": "Bob",
+                            "group": 1
                         }
                     ],
                     "links": [
                         {
-                        "source": 1,
-                        "target": 0,
-                        "value": 1
+                            "source": 1,
+                            "target": 0,
+                            "value": 1
+                        },
+                        {
+                            "source": 0,
+                            "target": 1,
+                            "value": 1
                         }   
                     ]
                 },

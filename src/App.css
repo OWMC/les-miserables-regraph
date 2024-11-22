@@ -1,0 +1,154 @@
+@property --bright-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d3e3f3; 
+}
+
+@property --dark-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #041226; 
+}
+
+@property --alt-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ed766c; 
+}
+
+.sidebarButton {
+  position: fixed;
+  background-color: white;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--bright-color);
+  color: var(--dark-color);
+}
+
+.sidebar {
+  background-position: left center;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 1px;
+  width: 100vw;
+  border-left: 1px solid var(--bright-color);
+  background-color: var(--dark-color);
+  padding: 24px;
+  overflow-y: auto;
+  transition:  right 0.5s;
+}
+
+@media screen and (min-width: 960px) {
+  .sidebar {
+    width: 24vw;
+    padding: 24px 18px;
+  }   
+}
+
+.hideSidebar {
+  right: -100%;
+  transition: right 0.5s;
+}
+
+@media screen and (min-width: 960px) {
+  .hideSidebar {
+    right: -30vw;
+  }
+}
+
+.sidebar ol {
+  margin: 0;
+  padding: 0 0 0 1.5em;
+}
+
+.sidebar p {
+  margin-top: 0;
+}
+
+.title-large, .title-medium {
+  font-weight: bold;
+  font-size: 21px;
+}
+.title-medium {
+  font-size: 18px;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.radioButtonGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.radioButtonGroup input {
+  margin-bottom: 5px;
+}
+
+.radioButtonGroup label {
+  margin-bottom: 5px;
+}
+
+.radioButtonGroup input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: var(--alt-color);
+  text-decoration-line: underline;
+}
+
+.tooltip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-top: -18px;
+  margin-left: 22px;
+
+  width: 180px;
+  padding: 6px 8px;
+  border: 1px solid var(--bright-color);
+  background-color: var(--dark-color);
+  color: var(--bright-color);
+
+  font-family: sans-serif;
+  font-size: 14px;
+  text-align: left;
+
+  border-radius: 1.5px 3px 3px 1.5px;
+  -webkit-box-shadow: -2px 2px 6px 0px var(--dark-color);
+  -moz-box-shadow: -2px 2px 6px 0px var(--dark-color);
+  box-shadow: -2px 2px 6px 0px var(--dark-color);
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  left: -12px;
+  width: 22px;
+  height: 22px;
+  transform: rotate(45deg);
+  border-left: 1px solid var(--bright-color);
+  border-bottom: 1px solid var(--bright-color);
+  background-color: var(--dark-color);
+  z-index: 1;
+
+  -webkit-box-shadow: -1px 4px 6px -2px var(--dark-color);
+  -moz-box-shadow: -1px 4px 6px -2px var(--dark-color);
+  box-shadow: -1px 4px 6px -2px var(--dark-color);
+}
+
+.tooltip-content {
+  position: relative;
+  z-index: 1;
+  min-height: 20px;
+  align-items: center;
+}
+
+.tooltip-para {
+  display: inline-block;
+  font-size: 12px;
+  margin: 0;
+  width: 100%;
+}

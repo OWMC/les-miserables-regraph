@@ -8,7 +8,7 @@ export const handleSidebarClick = () => {
   sidebarElement.classList.toggle('hideSidebar');
 };
 
-export default function Sidebar({highScores, onChangeImportance, importanceStandard }) {
+export default function Sidebar({highScores, onChangeImportance, importanceStandard, fail }) {
   return (
     <>
       <div data-testid="sidebar" className="sidebar" style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover' }}>
@@ -18,9 +18,13 @@ export default function Sidebar({highScores, onChangeImportance, importanceStand
         <h2 className='title-medium'>By what standard should we measure "importance"?</h2>
         <RadioButtonGroup onChangeImportance={onChangeImportance} importanceStandard={importanceStandard} />
         <h2 className='title-medium'>High scores</h2>
-        <ol>
-          {highScores.map(score => <li key={score}>{score}</li>)}
-        </ol>
+          {fail ? (
+            <p>{fail}</p>
+          ) : (
+            <ol>
+                {highScores && highScores.map(score => <li key={score}>{score}</li>)}
+            </ol>
+          )}
         <h2 className='title-medium'>Blue vs orange nodes</h2>
         <p>Orange nodes are special cases. Either are never a target, or never a source.</p>
       </div>      

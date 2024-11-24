@@ -16,6 +16,7 @@ export default function Fetch() {
   const [importanceStandard, setImportanceStandard] = useState('combined');
   const [scores, setScores] = useState([]);
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
   const [tooltip, setTooltip] = useState({ name: null, message: null, position: { x: 0, y: 0 } });
 
   // Get the data, format it, set state
@@ -23,18 +24,17 @@ export default function Fetch() {
     fetch('https://bost.ocks.org/mike/miserables/miserables.json')
       .then(response => response.json())
       .then(data => setData(reformatData(data, importanceStandard)))
-      .catch(error => console.error(error));
-  }, [importanceStandard]);
-
+      .catch(error => setError('Something went wrong with the fetch!'));
+  }, [importanceStandard]);  // importanceStandard is our reactive value
 
   // Highscores, set state
   useEffect(() => {
-    if (data && importanceStandard) {
+    if (data) {
       let top5 = Object.values(data).filter(node => node.data).sort((a, b) => b.value - a.value).slice(0, 5);;
       let top5Names = Object.values(top5).map(node => node.label.find(obj => obj && obj.text)?.text + ' (' + node.value + ')');
       setScores(top5Names);
     }
-  }, [data, importanceStandard]);
+  }, [data]); // data is our reactive value
 
   // Tooltip set state
   const updateTooltip = ({ id, x, y }) => {
@@ -128,8 +128,6 @@ export default function Fetch() {
     }
   };
 
-  console.log(scores);
-
   return (
     <div data-testid="Fetch" style={{ height: '100vh', width: '100vw' }}>
       <div
@@ -162,6 +160,7 @@ export default function Fetch() {
         highScores={scores} 
         onChangeImportance={handleImportanceStandard} 
         importanceStandard={importanceStandard}
+        fail={error}
       />
       {tooltip.message && (
         <Tooltip 
@@ -173,7 +172,7 @@ export default function Fetch() {
           target={`Target of connections value: ${tooltip.target}`}
           connections={`Direct connections: ${tooltip.connections}`}
         />
-      )}    
+      )}
     </div>
   );
 }

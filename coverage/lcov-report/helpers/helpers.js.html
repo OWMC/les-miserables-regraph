@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/Sidebar.jsx</title>
+    <title>Code coverage report for helpers/helpers.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> Sidebar.jsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">helpers</a> helpers.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -94,17 +94,13 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,57 +109,52 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import RadioButtonGroup from './RadioButtonGroup';
-import logo from '../assets/lesmis-logo.png';
-import bg from '../assets/bg.png';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const mediumColour = "#285078";
+const altColour = "#bc6017";
 &nbsp;
-export const handleSidebarClick = () =&gt; {
-  const sidebarElement = document.querySelector('.sidebar');
-  sidebarElement.classList.toggle('hideSidebar');
+// count links: source and destination.
+export function getLinkCount(data, index) {
+  return data.links.filter(link =&gt; link.source === index || link.target === index).length;
 };
 &nbsp;
-export default function Sidebar({highScores, onChangeImportance, importanceStandard, fail }) {
-  return (
-    &lt;&gt;
-      &lt;div data-testid="sidebar" className="sidebar" style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover' }}&gt;
-        &lt;img src={logo} width="196" height="91" alt="LesMis logo" /&gt;
-        &lt;h1 className='title-large'&gt;Important characters in the show&lt;/h1&gt;
-        &lt;hr /&gt;
-        &lt;h2 className='title-medium'&gt;By what standard should we measure "importance"?&lt;/h2&gt;
-        &lt;RadioButtonGroup onChangeImportance={onChangeImportance} importanceStandard={importanceStandard} /&gt;
-        &lt;h2 className='title-medium'&gt;High scores&lt;/h2&gt;
-          {fail ? (
-            &lt;p&gt;{fail}&lt;/p&gt;
-          ) : (
-            &lt;ol&gt;
-                {highScores &amp;&amp; highScores.map(score =&gt; &lt;li key={score}&gt;{score}&lt;/li&gt;)}
-            &lt;/ol&gt;
-          )}
-        &lt;h2 className='title-medium'&gt;Blue vs orange nodes&lt;/h2&gt;
-        &lt;p&gt;Orange nodes are special cases. Either are never a target, or never a source.&lt;/p&gt;
-      &lt;/div&gt;      
-      &lt;button className="sidebarButton" onClick={handleSidebarClick}&gt;Show/hide sidebar&lt;/button&gt;
-    &lt;/&gt;
-  );
+// count value of each link: combined value as source and destination.
+export function getCombinedLinkValue(data, index) {
+  return data.links.filter(link =&gt; link.source === index || link.target === index).map(link =&gt; link.value).reduce((a, b) =&gt; a + b, 0);
+};
+&nbsp;
+// Get value of each link where node is source.
+export function getSourceValue(data, index) {
+  return data.links.filter(link =&gt; link.source === index).map(link =&gt; link.value).reduce((a, b) =&gt; a + b, 0);
+};
+&nbsp;
+// Get value of each link where node is target.
+export function getTargetValue(data, index) {
+  return data.links.filter(link =&gt; link.target === index).map(link =&gt; link.value).reduce((a, b) =&gt; a + b, 0);
+};
+&nbsp;
+// Colours for nodes
+export function getNodeColour(data, index) {
+   if (getSourceValue(data, index) === 0 || getTargetValue(data, index) === 0) {
+    return altColour;
+  } else {
+    return mediumColour;
+  }
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -172,16 +163,16 @@ export default function Sidebar({highScores, onChangeImportance, importanceStand
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-24T23:26:11.814Z
+                at 2024-11-24T12:29:06.704Z
             </div>
-        <script src="../../prettify.js"></script>
+        <script src="../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
     </body>
 </html>
     

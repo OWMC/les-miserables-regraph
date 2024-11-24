@@ -59,6 +59,6 @@ const expectedOutput = {
 };
 
 
-test('reformatData returns correct object', () => {
-    expect(reformatData(data, 'source')).toEqual(expectedOutput);
+test('reformatData returns correct object with importanceStandard set to source', () => {
+  expect(reformatData(data, 'source')).toEqual(expectedOutput);
 });

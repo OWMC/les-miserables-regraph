@@ -3,14 +3,15 @@ import RadioButtonGroup from './RadioButtonGroup';
 import logo from '../assets/lesmis-logo.png';
 import bg from '../assets/bg.png';
 
+export const handleSidebarClick = () => {
+  const sidebarElement = document.querySelector('.sidebar');
+  sidebarElement.classList.toggle('hideSidebar');
+};
+
 export default function Sidebar({highScores, onChangeImportance, importanceStandard }) {
-  const handleSidebarClick = () => {
-    const sidebarElement = document.querySelector('.sidebar');
-    sidebarElement.classList.toggle('hideSidebar');
-  };
   return (
     <>
-      <div className="sidebar" style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover' }}>
+      <div data-testid="sidebar" className="sidebar" style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover' }}>
         <img src={logo} width="196" height="91" alt="LesMis logo" />
         <h1 className='title-large'>Important characters in the show</h1>
         <hr />

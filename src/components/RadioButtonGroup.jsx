@@ -6,7 +6,7 @@ export default function RadioButtonGroup({ onChangeImportance, importanceStandar
     onChangeImportance(event.target.value);
   };
   return (
-    <div className='radioButtonGroup'>
+    <div data-testid="radioButtonGroup" className='radioButtonGroup'>
       <div>
         <input
           type="radio"

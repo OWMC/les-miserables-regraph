@@ -1,5 +1,10 @@
+// Container div renders
+// Child components render
+// State is managed
+// Child components update
+
 import '@testing-library/jest-dom'
-import { render, screen } from "@testing-library/react"
+import { render } from "@testing-library/react"
 import Fetch from "./App"
 
 describe("Fetch", () => {

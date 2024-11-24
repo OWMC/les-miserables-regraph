@@ -128,6 +128,8 @@ export default function Fetch() {
     }
   };
 
+  console.log(scores);
+
   return (
     <div data-testid="Fetch" style={{ height: '100vh', width: '100vw' }}>
       <div

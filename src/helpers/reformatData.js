@@ -9,6 +9,8 @@ const labelStyle = {
   },
 };
 
+let initialData = [1, 2, 3];
+
 export function reformatData(initialData, importanceStandard) {
     const items = {};
     let nodeId = 1;

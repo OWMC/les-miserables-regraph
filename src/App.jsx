@@ -19,6 +19,40 @@ export default function Fetch() {
   const [error, setError] = useState(null);
   const [tooltip, setTooltip] = useState({ name: null, message: null, position: { x: 0, y: 0 } });
 
+  const mockedData = {
+    "nodes": [
+        {
+            "name": "Ben",
+            "group": 1
+        },                         
+        {
+            "name": "Bob",
+            "group": 1
+        },                         
+        {
+            "name": "Fred",
+            "group": 1
+        }
+    ],
+    "links": [
+        {
+            "source": 0,
+            "target": 1,
+            "value": 1
+        },
+        {
+            "source": 0,
+            "target": 2,
+            "value": 1
+        },
+        {
+            "source": 1,
+            "target": 0,
+            "value": 1
+        }   
+    ]
+};
+
   // Get the data, format it, set state
   useEffect(() => {
     fetch('https://bost.ocks.org/mike/miserables/miserables.json')
@@ -39,7 +73,7 @@ export default function Fetch() {
   // Tooltip set state
   const updateTooltip = ({ id, x, y }) => {
     const item = data[id];
-    if (item && item.data && item.value) {
+    if (item && item.data && item.value) { // Check item is a node with data and value key-pairs)
       setTooltip({
         name: item.data.name,
         message: item.value,
@@ -127,6 +161,8 @@ export default function Fetch() {
       chartRef.current.ping({ [id]: true }, pingOptions);
     }
   };
+
+  window.top.chart = chartRef;
 
   return (
     <div data-testid="Fetch" style={{ height: '100vh', width: '100vw' }}>

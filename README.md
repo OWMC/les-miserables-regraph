@@ -14,6 +14,17 @@ This React/Vite application calculates an importance score for characters in the
 
 This task was open ended in terms of both features and time. So I imposed some loose limits. I gave myself **2 weeks** to submit the work (I have had and continue to have ongoing job applications). In that time I would learn the features of ReGraph (documentation and videos), make decisions about which features I wanted to use and how I would like to present the data, and thus structure my app. I decided to use **JS over TS** mainly because it is less time consuming, and thus would allow me to learn more of ReGraph's features. There are some things I would have liked to do but these would require more time. These are mentioned under ***Future developments*** at the end of this readme file.
 
+**Running the project**
+
+Requires Node, I used version `21.3.0`.
+
+To run the project, make sure node modules are installed:
+
+`npm i` in the root directory.
+
+Then `npm run dev` and go to the localhost address listed in the terminal response.
+
+
 ## **Measuring Importance**
 
 There are many different ways we could measure importance, according to different subjective standards. Therefore I have provided a few different selectable options. Many more are possible.
@@ -48,7 +59,7 @@ Nodes are organised into groups, if no nodes are selected, links show within gro
 
 -   **Orange nodes**: These nodes are special cases where they are either never a target or never a source.
 
-## **Future Development**
+## **Future improvements**
 
 This application can be extended to support more complex network analysis and visualisation.
 
